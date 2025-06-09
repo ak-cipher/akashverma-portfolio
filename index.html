@@ -10,7 +10,8 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #ffffff;
       animation: fadeIn 1s ease-in;
     }
@@ -18,7 +19,7 @@
     header {
       padding: 2rem;
       text-align: center;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.6);
       animation: slideInDown 1s ease-out;
     }
 
@@ -36,6 +37,10 @@
       padding: 2rem;
       max-width: 800px;
       margin: auto;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
     }
 
     h3 {
@@ -43,7 +48,7 @@
     }
 
     a {
-      color: #ffd700;
+      color: #ffcc00;
       text-decoration: none;
       transition: color 0.3s ease;
     }
@@ -52,10 +57,15 @@
       color: #ffffff;
     }
 
+    ul {
+      padding-left: 1.2rem;
+    }
+
     footer {
       padding: 1rem;
       text-align: center;
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.6);
+      margin-top: 2rem;
     }
 
     @keyframes fadeIn {
