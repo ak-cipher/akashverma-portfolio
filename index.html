@@ -14,16 +14,16 @@
     :root {
       --bg-color: #0e0f13;
       --text-color: #f0f0f0;
-      --accent: #00f2ff;
+      --accent: #ff007f;
       --card-bg: rgba(255, 255, 255, 0.05);
     }
 
-   [data-theme="light"] {
-  --bg-color: #ffffff;
-  --text-color: #1a1a1a;
-  --accent: #0066ff; /* Blue for better contrast */
-  --card-bg: rgba(0, 0, 0, 0.05);
-}
+    [data-theme="light"] {
+      --bg-color: #fdf1f5;
+      --text-color: #1a1a1a;
+      --accent: #ff007f;
+      --card-bg: rgba(255, 255, 255, 0.6);
+    }
 
     * {
       margin: 0;
@@ -83,6 +83,7 @@
       align-items: center;
       text-align: center;
       padding: 2rem;
+      color: #fff; /* Force header text to always be white */
     }
 
     header h1 {
@@ -188,7 +189,7 @@
 </head>
 
 <body>
-  <!-- 3D Background -->
+  <!-- Vanta Background -->
   <div id="vanta-bg"></div>
 
   <!-- Main Content -->
@@ -281,7 +282,7 @@
     </footer>
   </div>
 
-  <!-- AOS + VANTA Scripts -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init({ duration: 1000 });</script>
 
@@ -297,7 +298,7 @@
       minWidth: 200.00,
       scale: 1.0,
       scaleMobile: 1.0,
-      color: 0x00f2ff,
+      color: 0xff007f,
       backgroundColor: 0x0e0f13
     });
 
