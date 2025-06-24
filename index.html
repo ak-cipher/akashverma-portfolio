@@ -1,105 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akash Verma | Flutter Dev | Futuristic Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akash Verma | Flutter Developer</title>
 
-  <!-- Google Font -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- AOS -->
+  <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
     :root {
       --bg-color: #0e0f13;
-      --text-color: #e0e0e0;
+      --text-color: #f0f0f0;
       --accent: #00f2ff;
-      --card-bg: rgba(255,255,255,0.05);
+      --card-bg: rgba(255, 255, 255, 0.05);
     }
+
     [data-theme="light"] {
       --bg-color: #f5f5f5;
       --text-color: #212121;
       --accent: #ff007f;
-      --card-bg: rgba(0,0,0,0.05);
+      --card-bg: rgba(0, 0, 0, 0.05);
     }
-    * { margin:0; padding:0; box-sizing:border-box; font-family:"JetBrains Mono", monospace; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "JetBrains Mono", monospace;
+    }
+
     body {
-      background: var(--bg-color);
+      background-color: var(--bg-color);
       color: var(--text-color);
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
-    #particles-js { position: fixed; width:100%; height:100%; z-index:-1; }
-    header {
-      min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+
+    #vanta-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
     }
-    header h1 {
-      font-size:3rem; color:var(--accent); text-shadow:0 0 10px var(--accent);
-    }
-    header h2 { font-size:1.5rem; opacity:0.8; margin-top:0.5rem; }
+
     .toggle-btn {
-      position:absolute; top:20px; right:20px;
-      background: none; border:2px solid var(--accent); padding:0.5rem 1rem;
-      color:var(--accent); cursor:pointer; border-radius:4px;
-      transition: background 0.3s;
+      position: fixed;
+      top: 20px; right: 20px;
+      padding: 8px 16px;
+      background: none;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      color: var(--accent);
+      cursor: pointer;
+      z-index: 99;
     }
-    .toggle-btn:hover { background: var(--accent); color: var(--bg-color); }
-    section { max-width:1000px; margin:2rem auto; padding:0 1rem; }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
+    }
+
+    header h2 {
+      font-size: 1.3rem;
+      margin: 0.8rem 0;
+      opacity: 0.8;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 4rem 1rem;
+    }
+
     h2.section-title {
-      font-size:2rem; margin-bottom:1rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
       position: relative;
     }
+
     h2.section-title::after {
-      content:'';
-      position:absolute; left:0; bottom:-5px;
-      width:50px; height:3px;
-      background:var(--accent);
+      content: '';
+      position: absolute;
+      bottom: -6px; left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent);
     }
-    .summary { line-height:1.7; }
+
     .projects-grid {
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
+
     .project-card {
       background: var(--card-bg);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:12px;
-      overflow:hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
       transition: transform 0.4s;
     }
-    .project-card:hover { transform:scale(1.03); border-color: var(--accent); }
+
+    .project-card:hover {
+      transform: scale(1.03);
+      border-color: var(--accent);
+    }
+
     .project-card img {
-      width:100%; height: auto;
-      display:block;
-      transition: transform 0.3s;
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
     }
-    .project-card:hover img { transform:scale(1.05); }
-    .project-info { padding:1rem; }
-    .project-info h3 { color: var(--accent); margin-bottom:0.5rem;}
+
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .project-info {
+      padding: 1rem;
+    }
+
+    .project-info h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
     .project-links a {
-      color:var(--accent); margin-right:0.8rem;
-      text-decoration:none; transition:color 0.3s;
+      margin-right: 1rem;
+      color: var(--accent);
+      text-decoration: none;
     }
-    .project-links a:hover { color:var(--text-color); }
+
     .skills-list {
-      display:flex; flex-wrap:wrap; gap:0.8rem;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
     }
+
     .skills-list span {
       background: var(--card-bg);
-      padding:0.5rem 1rem;
-      border-radius:4px;
-      border:1px solid rgba(255,255,255,0.1);
-      position:relative;
-      animation: glow 2s ease-in-out infinite alternate;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    @keyframes glow {
-      from { box-shadow: 0 0 5px var(--accent); }
-      to { box-shadow: 0 0 20px var(--accent); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.6;
     }
-    footer { text-align:center; margin:3rem 0; opacity:0.6; font-size:0.9rem; }
+
+    a:hover {
+      color: white;
+    }
   </style>
 </head>
-<body data-theme="dark">
+<body id="vanta-bg">
+
   <button class="toggle-btn">Toggle Theme</button>
-  <div id="particles-js"></div>
 
   <header data-aos="fade-down">
     <h1>Akash Verma</h1>
@@ -108,62 +184,58 @@
     <p><a href="https://github.com/akashverma1607" target="_blank">github.com/akashverma1607</a></p>
   </header>
 
-  <section data-aos="fade-right">
+  <section data-aos="fade-up">
     <h2 class="section-title">Summary</h2>
-    <p class="summary">I’m a Flutter developer with 4+ years of experience in creating cutting-edge cross-platform apps—leveraging modern stacks like Bloc, GetX, Riverpod, Firebase, and CI/CD pipelines. I thrive in implementing futuristic UI/UX and real-time analytics integrations.</p>
+    <p>I’m a Flutter developer with 4+ years of experience building cross-platform apps using Bloc, GetX, Riverpod, Firebase, and more. I specialize in futuristic UI/UX, analytics, and scalable architecture.</p>
   </section>
 
   <section data-aos="fade-up">
     <h2 class="section-title">Key Projects</h2>
     <div class="projects-grid">
-  
-      <!-- Project 1 Card -->
+
       <div class="project-card" data-aos="zoom-in">
-        <img src="screenshots/ems-playstore.png" alt="EMS App Screenshot">
+        <img src="screenshots/ems.png" alt="EMS Screenshot" />
         <div class="project-info">
-          <h3>Employee Management System</h3>
+          <h3>EMS (Employee Management System)</h3>
           <p>Flutter · Firebase · GetX</p>
           <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.cogenteservices.cogent_ems" target="_blank">Google Play</a>
+            <a href="https://play.google.com/store/apps/details?id=com.cogenteservices.cogent_ems" target="_blank">Play Store</a>
           </div>
         </div>
       </div>
 
-      <!-- Project 2 Card -->
       <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="screenshots/pawpular.png" alt="Pawpular App Screenshot">
+        <img src="screenshots/pawpular.png" alt="Pawpular Screenshot" />
         <div class="project-info">
           <h3>Pawpular</h3>
           <p>Flutter · HealthKit · Notifications</p>
           <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.pawpular.pawpular" target="_blank">Google Play</a>
-            <a href="https://apps.apple.com/in/app/pawpular-walk-to-earn-rewards/id6447305426" target="_blank">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.pawpular.pawpular" target="_blank">Play Store</a>
+            <a href="https://apps.apple.com/in/app/pawpular-walk-to-earn-rewards/id6447305426" target="_blank">App Store</a>
           </div>
         </div>
       </div>
 
-      <!-- Project 3 Card -->
       <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-        <img src="screenshots/sabo.png" alt="Sabo Outdoors App Screenshot">
+        <img src="screenshots/sabo.png" alt="Sabo Outdoors Screenshot" />
         <div class="project-info">
           <h3>Sabo Outdoors</h3>
-          <p>Flutter · Stripe · Google Maps</p>
+          <p>Flutter · Stripe · Google Maps</p>
           <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.app.sabooutdoors" target="_blank">Google Play</a>
-            <a href="https://apps.apple.com/us/app/sabo-outdoors/id6452754879" target="_blank">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.app.sabooutdoors" target="_blank">Play Store</a>
+            <a href="https://apps.apple.com/us/app/sabo-outdoors/id6452754879" target="_blank">App Store</a>
           </div>
         </div>
       </div>
 
-      <!-- Project 4 Card -->
       <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-        <img src="screenshots/gated-resident.png" alt="Gated Resident App Screenshot">
+        <img src="screenshots/gated-resident.png" alt="Gated Resident Screenshot" />
         <div class="project-info">
           <h3>Gated Resident</h3>
-          <p>Flutter · BLoC · Shorebird</p>
+          <p>Flutter · Shorebird · BLoC</p>
           <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.gatedresident.app" target="_blank">Google Play</a>
-            <a href="https://apps.apple.com/in/app/gated-resident-app/id6547855305" target="_blank">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.gatedresident.app" target="_blank">Play Store</a>
+            <a href="https://apps.apple.com/in/app/gated-resident-app/id6547855305" target="_blank">App Store</a>
           </div>
         </div>
       </div>
@@ -171,32 +243,53 @@
     </div>
   </section>
 
-  <section data-aos="fade-left">
-    <h2 class="section-title">🛠️ Skills</h2>
+  <section data-aos="fade-up">
+    <h2 class="section-title">Skills</h2>
     <div class="skills-list">
-      <span>Flutter</span><span>Dart</span><span>BLoC</span>
-      <span>GetX</span><span>Riverpod</span><span>Firebase</span>
-      <span>Stripe</span><span>CI/CD</span><span>UI/UX</span>
+      <span>Flutter</span>
+      <span>Dart</span>
+      <span>BLoC</span>
+      <span>GetX</span>
+      <span>Riverpod</span>
+      <span>Firebase</span>
+      <span>Stripe</span>
+      <span>CI/CD</span>
+      <span>UI/UX</span>
     </div>
   </section>
 
   <footer data-aos="fade-up">
-    &copy; 2025 Akash Verma — Futuristic Portfolio
+    &copy; 2025 Akash Verma — All rights reserved.
   </footer>
 
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <!-- AOS -->
+  <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-    particlesJS.load('particles-js', 'particles.json', null);
-    // Light/dark toggle
-    const btn = document.querySelector('.toggle-btn');
-    const root = document.documentElement;
-    btn.addEventListener('click', () => {
-      const theme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.body.setAttribute('data-theme', theme);
+    AOS.init({ duration: 1000 });
+  </script>
+
+  <!-- Vanta Background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script>
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x00f2ff,
+      backgroundColor: 0x0e0f13
+    });
+
+    // Theme Toggle
+    document.querySelector('.toggle-btn').addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", newTheme);
     });
   </script>
 </body>
