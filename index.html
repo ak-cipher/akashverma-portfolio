@@ -6,9 +6,9 @@
   <title>Akash Verma | Flutter Developer</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
   <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
     :root {
@@ -41,14 +41,22 @@
 
     #vanta-bg {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
+    }
+
+    #main-content {
+      position: relative;
+      z-index: 1;
     }
 
     .toggle-btn {
       position: fixed;
-      top: 20px; right: 20px;
+      top: 20px;
+      right: 20px;
       padding: 8px 16px;
       background: none;
       border: 2px solid var(--accent);
@@ -58,8 +66,17 @@
       z-index: 99;
     }
 
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: white;
+    }
+
     header {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -95,7 +112,8 @@
     h2.section-title::after {
       content: '';
       position: absolute;
-      bottom: -6px; left: 0;
+      bottom: -6px;
+      left: 0;
       width: 60px;
       height: 3px;
       background-color: var(--accent);
@@ -144,7 +162,6 @@
     .project-links a {
       margin-right: 1rem;
       color: var(--accent);
-      text-decoration: none;
     }
 
     .skills-list {
@@ -167,108 +184,107 @@
       font-size: 0.9rem;
       opacity: 0.6;
     }
-
-    a:hover {
-      color: white;
-    }
   </style>
 </head>
-<body id="vanta-bg">
 
-  <button class="toggle-btn">Toggle Theme</button>
+<body>
+  <!-- 3D Background -->
+  <div id="vanta-bg"></div>
 
-  <header data-aos="fade-down">
-    <h1>Akash Verma</h1>
-    <h2>Futuristic Flutter Developer 🚀</h2>
-    <p>Email: <a href="mailto:akashverma1607.av@gmail.com">akashverma1607.av@gmail.com</a> | Delhi, India</p>
-    <p><a href="https://github.com/akashverma1607" target="_blank">github.com/akashverma1607</a></p>
-  </header>
+  <!-- Main Content -->
+  <div id="main-content">
+    <button class="toggle-btn">Toggle Theme</button>
 
-  <section data-aos="fade-up">
-    <h2 class="section-title">Summary</h2>
-    <p>I’m a Flutter developer with 4+ years of experience building cross-platform apps using Bloc, GetX, Riverpod, Firebase, and more. I specialize in futuristic UI/UX, analytics, and scalable architecture.</p>
-  </section>
+    <header data-aos="fade-down">
+      <h1>Akash Verma</h1>
+      <h2>Futuristic Flutter Developer 🚀</h2>
+      <p>Email: <a href="mailto:akashverma1607.av@gmail.com">akashverma1607.av@gmail.com</a> | Delhi, India</p>
+      <p><a href="https://github.com/akashverma1607" target="_blank">github.com/akashverma1607</a></p>
+    </header>
 
-  <section data-aos="fade-up">
-    <h2 class="section-title">Key Projects</h2>
-    <div class="projects-grid">
+    <section data-aos="fade-up">
+      <h2 class="section-title">Summary</h2>
+      <p>Flutter developer with 4+ years of experience building modern cross-platform apps using BLoC, GetX, Riverpod, Firebase, and more. Passionate about creating futuristic UI/UX and robust, scalable architectures.</p>
+    </section>
 
-      <div class="project-card" data-aos="zoom-in">
-        <img src="screenshots/ems.png" alt="EMS Screenshot" />
-        <div class="project-info">
-          <h3>EMS (Employee Management System)</h3>
-          <p>Flutter · Firebase · GetX</p>
-          <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.cogenteservices.cogent_ems" target="_blank">Play Store</a>
+    <section data-aos="fade-up">
+      <h2 class="section-title">Key Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card" data-aos="zoom-in">
+          <img src="screenshots/ems.png" alt="EMS Screenshot" />
+          <div class="project-info">
+            <h3>EMS</h3>
+            <p>Flutter · Firebase · GetX</p>
+            <div class="project-links">
+              <a href="https://play.google.com/store/apps/details?id=com.cogenteservices.cogent_ems" target="_blank">Play Store</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="screenshots/pawpular.png" alt="Pawpular Screenshot" />
-        <div class="project-info">
-          <h3>Pawpular</h3>
-          <p>Flutter · HealthKit · Notifications</p>
-          <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.pawpular.pawpular" target="_blank">Play Store</a>
-            <a href="https://apps.apple.com/in/app/pawpular-walk-to-earn-rewards/id6447305426" target="_blank">App Store</a>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+          <img src="screenshots/pawpular.png" alt="Pawpular Screenshot" />
+          <div class="project-info">
+            <h3>Pawpular</h3>
+            <p>Flutter · HealthKit · Notifications</p>
+            <div class="project-links">
+              <a href="https://play.google.com/store/apps/details?id=com.pawpular.pawpular" target="_blank">Play Store</a>
+              <a href="https://apps.apple.com/in/app/pawpular-walk-to-earn-rewards/id6447305426" target="_blank">App Store</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-        <img src="screenshots/sabo.png" alt="Sabo Outdoors Screenshot" />
-        <div class="project-info">
-          <h3>Sabo Outdoors</h3>
-          <p>Flutter · Stripe · Google Maps</p>
-          <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.app.sabooutdoors" target="_blank">Play Store</a>
-            <a href="https://apps.apple.com/us/app/sabo-outdoors/id6452754879" target="_blank">App Store</a>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+          <img src="screenshots/sabo.png" alt="Sabo Outdoors Screenshot" />
+          <div class="project-info">
+            <h3>Sabo Outdoors</h3>
+            <p>Flutter · Stripe · Google Maps</p>
+            <div class="project-links">
+              <a href="https://play.google.com/store/apps/details?id=com.app.sabooutdoors" target="_blank">Play Store</a>
+              <a href="https://apps.apple.com/us/app/sabo-outdoors/id6452754879" target="_blank">App Store</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-        <img src="screenshots/gated-resident.png" alt="Gated Resident Screenshot" />
-        <div class="project-info">
-          <h3>Gated Resident</h3>
-          <p>Flutter · Shorebird · BLoC</p>
-          <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.gatedresident.app" target="_blank">Play Store</a>
-            <a href="https://apps.apple.com/in/app/gated-resident-app/id6547855305" target="_blank">App Store</a>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+          <img src="screenshots/gated-resident.png" alt="Gated Resident Screenshot" />
+          <div class="project-info">
+            <h3>Gated Resident</h3>
+            <p>Flutter · BLoC · Shorebird</p>
+            <div class="project-links">
+              <a href="https://play.google.com/store/apps/details?id=com.gatedresident.app" target="_blank">Play Store</a>
+              <a href="https://apps.apple.com/in/app/gated-resident-app/id6547855305" target="_blank">App Store</a>
+            </div>
           </div>
         </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section data-aos="fade-up">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-list">
+        <span>Flutter</span>
+        <span>Dart</span>
+        <span>BLoC</span>
+        <span>GetX</span>
+        <span>Riverpod</span>
+        <span>Firebase</span>
+        <span>Stripe</span>
+        <span>CI/CD</span>
+        <span>UI/UX</span>
+      </div>
+    </section>
 
-  <section data-aos="fade-up">
-    <h2 class="section-title">Skills</h2>
-    <div class="skills-list">
-      <span>Flutter</span>
-      <span>Dart</span>
-      <span>BLoC</span>
-      <span>GetX</span>
-      <span>Riverpod</span>
-      <span>Firebase</span>
-      <span>Stripe</span>
-      <span>CI/CD</span>
-      <span>UI/UX</span>
-    </div>
-  </section>
+    <footer data-aos="fade-up">
+      &copy; 2025 Akash Verma — All rights reserved.
+    </footer>
+  </div>
 
-  <footer data-aos="fade-up">
-    &copy; 2025 Akash Verma — All rights reserved.
-  </footer>
-
-  <!-- AOS JS -->
+  <!-- AOS + VANTA Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000 });
-  </script>
+  <script>AOS.init({ duration: 1000 });</script>
 
-  <!-- Vanta Background -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   <script>
@@ -285,11 +301,10 @@
       backgroundColor: 0x0e0f13
     });
 
-    // Theme Toggle
     document.querySelector('.toggle-btn').addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute("data-theme");
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", newTheme);
+      const root = document.documentElement;
+      const theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", theme);
     });
   </script>
 </body>
